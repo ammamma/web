@@ -1,0 +1,55 @@
+
+Installation
+------------
+- Install Ruby
+  * http://rubyinstaller.org/
+
+- Install SASS
+  * http://sass-lang.com/install
+
+- Install nodejs and npm
+
+- Install Bower with npm
+  npm install -g bower
+
+- Install Grunt (cli) with npm
+  npm install -g grunt-cli
+  
+- Install Compass with Ruby gem tool
+  gem update --system
+  gem install compass
+
+- Create the project folder and go there. Called "/project/" here.
+- Create Node package file:
+  /project/package.json
+
+- Install Grunt and components to the project:
+  npm install grunt --save-dev
+  npm install grunt-contrib-clean --save-dev
+  npm install grunt-contrib-concat --save-dev
+  npm install grunt-contrib-uglify --save-dev
+  npm install grunt-contrib-jshint --save-dev
+  npm install grunt-contrib-compass --save-dev
+  npm install grunt-contrib-nodeunit --save-dev
+
+- Create Gruntfile
+  /project/gruntfile.js
+  
+- Install Bootsrap-SASS with Bower to the project
+  * http://www.sitepoint.com/bootstrap-sass-installation-and-customisation/
+  bower install bootstrap-sass
+
+- Copy Bootstrap variables to custom variables file 
+    /project/src/styles/_custom-variables.scss
+
+- Create main SASS file, and custom styles file
+    /project/src/styles/main.scss
+    /project/src/styles/_custom-styles.scss
+    
+    * Add Bootstrap, custom variables and custom styles file imports to it
+    
+      @import "custom-variables";
+      @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+      @import "custom-styles";
+      
+      
