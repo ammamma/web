@@ -30,12 +30,12 @@ module.exports = function(grunt) {
         mangle: true,
         //mangleProperties: true,
         sourceMap : true,
-        sourceMapName : 'dist/js/main.js.map',
+        sourceMapName : 'dist/js/main.min.js.map',
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       dist: {
         files: {
-          'dist/js/main.js.min' : ['<%= concat.dist.dest %>']
+          'dist/js/main.min.js' : ['<%= concat.dist.dest %>']
         }
       }
     },
@@ -57,6 +57,26 @@ module.exports = function(grunt) {
       }
     },
     
+    // Copy HTML files to dist.
+    copy: {
+      main: {
+        files: [
+          {
+            cwd:    'src/html/',   // set working folder / root to copy
+            src:    ['*.html'],     // copy html files
+            dest:   'dist/html/',  // destination folder
+            expand: true          // required when using cwd
+          },
+          {
+            cwd:    'bower_components/jquery/dist/',   // set working folder / root to copy
+            src:    ['jquery.min.js'], // copy html files
+            dest:   'dist/js/',   // destination folder
+            expand: true         // required when using cwd
+          }
+        ]
+      }
+    },
+    
     // Task for cleaning.
     clean: {
       contents: ['dist/*'],
@@ -69,12 +89,13 @@ module.exports = function(grunt) {
 
 
   // Load plugins.
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
 
   // Run as part of default task.
-  grunt.registerTask('default', ['concat', 'uglify', 'compass']);
+  grunt.registerTask('default', ['concat', 'uglify', 'compass', 'copy']);
 
 };

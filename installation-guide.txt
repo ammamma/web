@@ -7,15 +7,17 @@ Installation
 - Install SASS
   * http://sass-lang.com/install
 
-- Install nodejs and npm
-
-- Install Bower with npm
-  npm install -g bower
+- Install nodejs
+- Install npm v3:
+  npm install -g npm3
 
 - Install Grunt (cli) with npm
   npm install -g grunt-cli
   
-- Install Compass with Ruby gem tool
+- Install Bower with npm
+  npm install bower --save-dev
+
+  - Install Compass with Ruby gem tool
   gem update --system
   gem install compass
 
@@ -24,13 +26,13 @@ Installation
   /project/package.json
 
 - Install Grunt and components to the project:
-  npm install grunt --save-dev
-  npm install grunt-contrib-clean --save-dev
-  npm install grunt-contrib-concat --save-dev
-  npm install grunt-contrib-uglify --save-dev
-  npm install grunt-contrib-jshint --save-dev
-  npm install grunt-contrib-compass --save-dev
-  npm install grunt-contrib-nodeunit --save-dev
+  npm3 install grunt --save-dev
+  npm3 install grunt-contrib-copy --save-dev
+  npm3 install grunt-contrib-clean --save-dev
+  npm3 install grunt-contrib-concat --save-dev
+  npm3 install grunt-contrib-uglify --save-dev
+  npm3 install grunt-contrib-jshint --save-dev
+  npm3 install grunt-contrib-compass --save-dev
 
 - Create Gruntfile
   /project/gruntfile.js
