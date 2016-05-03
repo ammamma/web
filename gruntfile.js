@@ -71,7 +71,13 @@ module.exports = function(grunt) {
             cwd:    'bower_components/jquery/dist/',   // set working folder / root to copy
             src:    ['jquery.min.js'], // copy html files
             dest:   'dist/js/',   // destination folder
-            expand: true         // required when using cwd
+            expand: true          // required when using cwd
+          },
+          {
+            cwd:    'bower_components/bootstrap-sass/assets/javascripts/',   // set working folder / root to copy
+            src:    ['bootstrap.min.js'], // copy html files
+            dest:   'dist/js/',   // destination folder
+            expand: true          // required when using cwd
           }
         ]
       }
@@ -79,7 +85,7 @@ module.exports = function(grunt) {
     
     // Task for cleaning.
     clean: {
-      contents: ['dist/*'],
+      folder: ['dist/'],
       combined_js: ['<%= concat.dist.dest %>']
     }
     
