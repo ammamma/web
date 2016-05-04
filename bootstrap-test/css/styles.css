@@ -1,0 +1,39 @@
+
+body{
+  height: 100%;
+}
+
+.navbar{
+  background-color: rgba(128,128,128,0.7);
+  border-color: rgba(32,32,32,0.9);
+}
+
+
+.page-main-section{
+  min-height: 50%;
+}
+
+.mm_spacer{
+  min-height: 50px;
+}
+
+#services{
+  background-color: #52d4ff;
+}
+
+#portfolio{
+  background-color: #d352ff;
+}
+
+#about{
+  background-color: #ff7d52;
+}
+
+#team{
+  background-color: #7eff52;
+}
+
+#contact{
+  background-color: #FFF152;
+}
+
